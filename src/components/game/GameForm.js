@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { GameContext } from "./GameProvider.js";
 import { useHistory } from "react-router-dom";
 
+
 export const GameForm = () => {
   const history = useHistory();
   const { createGame, getGameTypes, gameTypes } = useContext(GameContext);

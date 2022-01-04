@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 export const EventForm = () => {
   const history = useHistory();
 
-  const [currentEvent, setEvent] = useState({});
+  const [currentEvent, games, setEvent] = useState({});
 
   useEffect(() => {
     // Get all existing games from API
@@ -28,7 +28,7 @@ export const EventForm = () => {
           >
             <option value="0">Select a game...</option>
             {games.map((game) => (
-              <option></option>
+              <option>Monopoly</option>
             ))}
           </select>
         </div>
