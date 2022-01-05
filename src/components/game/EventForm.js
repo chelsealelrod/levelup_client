@@ -1,10 +1,13 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import { GameContext } from "./GameProvider.js";
 
 export const EventForm = () => {
   const history = useHistory();
 
-  const [currentEvent, games, setEvent] = useState({});
+  const { games } = useContext(GameContext);
+
+  const [currentEvent, setEvent] = useState({});
 
   useEffect(() => {
     // Get all existing games from API

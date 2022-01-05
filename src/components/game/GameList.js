@@ -1,8 +1,10 @@
 import React, { useContext, useEffect } from "react";
 import { GameContext } from "./GameProvider.js";
+import { useHistory } from 'react-router-dom';
 
 export const GameList = (props) => {
   const { games, getGames } = useContext(GameContext);
+  const history = useHistory();
 
   useEffect(() => {
     getGames();

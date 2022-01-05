@@ -19,7 +19,7 @@ export const ApplicationViews = () => {
         <GameProvider>
         <EventProvider>
 
-          <Route exact path="/">
+          <Route exact path="/games">
             <GameList />
           </Route>
       
