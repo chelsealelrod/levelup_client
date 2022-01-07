@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { GameContext } from "./GameProvider.js";
 import { useHistory } from "react-router-dom";
+import "./Games.css";
 
 
 export const GameForm = () => {
@@ -84,6 +85,47 @@ export const GameForm = () => {
             value={currentGame.title}
             onChange={changeGameTitleState}
           />
+          <label htmlFor="maker">Maker: </label>
+          <input
+            type="text"
+            name="maker"
+            required
+            autoFocus
+            className="form-control"
+            value={currentGame.maker}
+            onChange={changeGameMakerState}
+          />
+            <label htmlFor="player">Number of Players: </label>
+          <input
+            type="text"
+            name="player"
+            required
+            autoFocus
+            className="form-control"
+            value={currentGame.numberOfPlayers}
+            onChange={changeGamePlayersState}
+          />
+            <label htmlFor="player">Skill Level: </label>
+          <input
+            type="text"
+            name="skill_level"
+            required
+            autoFocus
+            className="form-control"
+            value={currentGame.skillLevel}
+            onChange={changeGameSkillLevelState}
+          />
+           <label htmlFor="player">Game Type: </label>
+          <input
+            type="text"
+            name="game_type"
+            required
+            autoFocus
+            className="form-control"
+            value={currentGame.gameTypeId}
+            onChange={changeGameTypeState}
+          />
+          
         </div>
       </fieldset>
 
