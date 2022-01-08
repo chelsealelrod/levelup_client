@@ -15,8 +15,17 @@ export const EventProvider = (props) => {
       .then(setEvents);
   };
 
-  const createEvent = () => {
-    return fetch("", {});
+  const createEvent = (newEvent) => {
+    return fetch("http://localhost:8000/events", {
+      method: "POST",
+      headers: {
+        Authorization: `Token ${localStorage.getItem("lu_token")}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(newEvent)
+    })
+      .then((response) => response.json())
+    .then(getEvents);
   };
 
   const joinEvent = (eventId) => {

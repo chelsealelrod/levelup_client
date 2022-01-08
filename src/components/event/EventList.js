@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { EventContext } from "./EventProvider.js";
 import { useHistory } from "react-router-dom";
-// import "./Events.css";
+import "./Events.css";
 
 export const EventList = () => {
   const history = useHistory();
