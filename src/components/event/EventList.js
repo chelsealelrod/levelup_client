@@ -31,7 +31,17 @@ export const EventList = () => {
             <div className="registration__game">{event.game.title}</div>
             <div>{event.description}</div>
             <div>
-              {event.date} @ {event.time}
+              <p>'2022-01-20'</p>
+              <p>{new Date(event.date).toString()}</p>
+              <p>{new Date(event.date).toUTCString()}</p>
+              <p>{new Date(event.date).getUTC()}-{new Date(event.date)}</p>
+              <p>{new Date('2022-01-20').toLocaleDateString("en-US", {
+                weekday: "long",
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+              @ {event.time}</p>
             </div>
             <button className="btn btn-2" onClick={() => joinEvent(event.id)}>
               Join

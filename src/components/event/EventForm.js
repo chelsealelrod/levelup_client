@@ -3,8 +3,6 @@ import { useHistory } from "react-router-dom";
 import { GameContext } from "../game/GameProvider.js";
 import { EventContext } from "../event/EventProvider";
 import "./Events.css"
-import DatePicker from 'react-datepicker';
-import "react-datepicker/dist/react-datepicker.css";
 
 export const EventForm = () => {
   const history = useHistory();
@@ -12,12 +10,14 @@ export const EventForm = () => {
   const { games } = useContext(GameContext);
   const { createEvent } = useContext(EventContext);
 
-  const [currentEvent, setCurrentEvent] = useState({  game: 1,
-    location: "",
+  const [currentEvent, setCurrentEvent] = useState({  
+    gameId: 1,
+    title: "",
+    description: "",
     date: "",
     time: ""});
   const { getGames } = useContext(GameContext);
-  const [startDate, setStartDate] = useState(new Date());
+
 
 
   useEffect(() => {
@@ -26,14 +26,15 @@ export const EventForm = () => {
 
   const changeEventState = (domEvent) => {
     const newEventState = { ...currentEvent };
-    newEventState.game = domEvent.target.value;
+
+    newEventState[domEvent.target.name] = domEvent.target.value;
     setCurrentEvent(newEventState);
   };
 
   return (
     <>
-    <form className="gameForm">
-      <h2 className="gameForm__title">Schedule New Event</h2>
+    <form className="eventForm">
+      <h2 className="eventForm__title">Schedule New Event</h2>
       <fieldset>
         <div className="form-group">
           <label htmlFor="gameId">Game: </label>
@@ -56,6 +57,20 @@ export const EventForm = () => {
           <br></br>
           </div>
           <div className="form-group">
+          <label htmlFor="title">Title: </label>
+          <input
+            type="text"
+            name="title"
+            required
+            autoFocus
+            className="form-control"
+            value={currentEvent.title}
+            onChange={changeEventState}
+          />
+          <br></br>
+          
+        </div>
+          <div className="form-group">
           <label htmlFor="description">Description: </label>
           <input
             type="text"
@@ -69,14 +84,14 @@ export const EventForm = () => {
           
         </div>
         <div className="form-group"><br></br>
-        <label htmlFor="date">Date:</label>
-        <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
-    </div>
+        <label htmlFor="date">Date:</label><br></br>
+        <input type="date" id="appt" name="date" onChange={changeEventState}/>
+        </div>
     <br></br>
      <div className="form-group">
-     <label for="time">Time:</label><br></br>
+     <label htmlFor="time">Time:</label><br></br>
 
-     <input type="time" id="appt" name="appt"
+     <input type="time" id="appt" name="time" onChange={changeEventState}
             min="09:00" max="18:00" required/>
      
      </div>
@@ -90,13 +105,14 @@ export const EventForm = () => {
           evt.preventDefault();
 
           const event = {
-            game: currentEvent.game,
-            location: currentEvent.location,
-            date: currentEvent.date,
-            time: currentEvent.time
+            gameId: currentEvent.gameId,
+            description: currentEvent.description,
+            date: new Date(currentEvent.date),
+            time: currentEvent.time,
           };
 
           // Send POST request to your API
+          console.log(event)
           createEvent(event).then(() => history.push("/events"));
         }}
         className="btn btn-primary"
