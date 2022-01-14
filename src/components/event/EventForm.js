@@ -54,8 +54,10 @@ export const EventForm = () => {
           </option>
             ))}
           </select>
-          <br></br>
           </div>
+        </fieldset>
+
+        <fieldset>
           <div className="form-group">
           <label htmlFor="title">Title: </label>
           <input
@@ -67,9 +69,10 @@ export const EventForm = () => {
             value={currentEvent.title}
             onChange={changeEventState}
           />
-          <br></br>
-          
-        </div>
+          </div>
+          </fieldset>
+
+        <fieldset>
           <div className="form-group">
           <label htmlFor="description">Description: </label>
           <input
@@ -83,16 +86,33 @@ export const EventForm = () => {
           />
           
         </div>
-        <div className="form-group"><br></br>
-        <label htmlFor="date">Date:</label><br></br>
-        <input type="date" id="appt" name="date" onChange={changeEventState}/>
-        </div>
-    <br></br>
-     <div className="form-group">
-     <label htmlFor="time">Time:</label><br></br>
+        </fieldset>
 
-     <input type="time" id="appt" name="time" onChange={changeEventState}
-            min="09:00" max="18:00" required/>
+      <fieldset>
+        <div className="form-group">
+        <label htmlFor="date">Date:</label>
+        <input 
+          type="date"
+          name="date"
+          className="form-control"
+          value={currentEvent.date}
+          onChange={changeEventState}
+          />
+        </div>
+      </fieldset>
+
+
+    <fieldset>
+     <div className="form-group">
+     <label htmlFor="time">Time:</label>
+     <input
+         type="time"
+         name="time"
+         className="form-control"
+         value={currentEvent.time}
+         onChange={changeEventState}
+      />
+            
      
      </div>
       </fieldset>
@@ -107,7 +127,7 @@ export const EventForm = () => {
           const event = {
             gameId: currentEvent.gameId,
             description: currentEvent.description,
-            date: new Date(currentEvent.date),
+            date: new Date(currentEvent.date).toString(),
             time: currentEvent.time,
           };
 
