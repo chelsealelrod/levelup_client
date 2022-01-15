@@ -8,6 +8,8 @@ import { EventList } from "./event/EventList.js";
 import { GameForm } from "./game/GameForm";
 import { ProfileProvider } from "./profile/ProfileProvider";
 import { Profile } from "./profile/Profile";
+import { GamerProvider } from "./gamer/GamerProvider.js";
+
 
 export const ApplicationViews = () => {
   return (
@@ -17,10 +19,10 @@ export const ApplicationViews = () => {
           margin: "5rem 2rem",
           lineHeight: "1.75rem",
         }}
-      >
-        <GameProvider>
-          <EventProvider>
-            <ProfileProvider>
+      >  <GamerProvider>
+            <GameProvider>
+              <EventProvider>
+                <ProfileProvider>
 
               <Route exact path="/games">
                 <GameList />
@@ -42,9 +44,10 @@ export const ApplicationViews = () => {
                 <Profile />
               </Route>
 
-              </ProfileProvider>
+            </ProfileProvider>
           </EventProvider>
         </GameProvider>
+      </GamerProvider>
       </main>
     </>
   );

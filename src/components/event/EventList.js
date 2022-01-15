@@ -1,14 +1,18 @@
 import React, { useContext, useEffect } from "react";
 import { EventContext } from "./EventProvider.js";
-import { useHistory } from "react-router-dom";
 import "./Events.css";
+import { useHistory } from "react-router-dom";
+import { GamerContext } from "../gamer/GamerProvider"
+
 
 export const EventList = () => {
   const history = useHistory();
   const { events, getEvents, joinEvent, leaveEvent } = useContext(EventContext);
+  const { currentGamer, getCurrentGamer } = useContext(GamerContext);
 
   useEffect(() => {
     getEvents();
+    getCurrentGamer();
   }, []);
 
   return (
@@ -30,6 +34,8 @@ export const EventList = () => {
             <div className="registration__game">{event.game.title}</div>
             <div>{event.description}</div>
             <div>
+              debugger
+              <p>Current Gamer: {currentGamer.gamer.bio}</p>
               <p>{new Date(event.date).toString()}</p>
               <p>{new Date(event.date).toUTCString()}</p>
               <p>{new Date(event.date).getUTCFullYear()}-{new Date(event.date).getUTCMonth() + 1}-{new Date(event.date).getUTCDate()}</p>
