@@ -3,9 +3,17 @@
     background: green;
 }
 
+.submit-create-button {
+    text-align: center;
+    background: green;
+    padding: 0.5em;
+    margin: 1em 3em;
+}
+
 .registration {
     border: dotted green;
     padding: 2em;
+    margin: 3em 40em 2em 2em;
 }
 
 .schedule_new_event {
@@ -15,6 +23,8 @@
     font-style: oblique;
     font-size:large;
     margin-bottom: 1em;
+    padding: 1em;
+    margin: 1em 3em;
 
 }
 
@@ -32,4 +42,9 @@
     background: #27ae60;
     margin-top: 1em;
     font-size:medium;
+}
+
+.form-group {
+    padding: 0em;
+    margin: 1em 45em 0em 1em;
 }

@@ -135,7 +135,7 @@ export const EventForm = () => {
           console.log(event)
           createEvent(event).then(() => history.push("/events"));
         }}
-        className="btn btn-primary"
+        className="submit-create-button"
       >
         Create Event
       </button>

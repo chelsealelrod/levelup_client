@@ -1,11 +1,35 @@
 .navbar {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: left;
+    justify-content: center;
+    padding: 1em;
+    margin-bottom: 0em;
+    margin-top: 3em;
+    margin-left: 1em;
+  
 }
 
 .navbar__item {
-    flex-basis: 20%;
+    flex-basis: 0em;
     list-style-type: none;
+    padding: 3em;
+    margin: 0em 1em 2em 1em;
+    font-size:large;
 }
 
+.star {
+    width: 115px;
+    height: 120px;
+    padding: 1em;
+    margin:0em 5em 0em 0em;
+   
+}
+
+.nav-item {
+    flex-basis: 2%;
+    list-style-type: none;
+    padding: 3em;
+    margin: 0em 1em 2em 1em;
+    font-size: large;
+
+}
