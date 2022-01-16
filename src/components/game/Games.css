@@ -1,6 +1,13 @@
-.btn-2 btn-sep icon-create {
+.register_new_game{
     display: flex;
     text-align: center;
     background-color: green;
-    padding: 0em;
+    padding: 1em;
+    margin: 1em;
+}
+
+.game {
+    border: solid;
+    padding: 1em;
+    margin: 1em 1em;
 }

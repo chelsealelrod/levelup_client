@@ -31,7 +31,7 @@ export const GameList = (props) => {
                 })}
             </article>
      <button
-     className="btn-2 btn-sep icon-create"
+     className="register_new_game"
      onClick={() => {
        history.push({ pathname: "/games/new" });
      }}

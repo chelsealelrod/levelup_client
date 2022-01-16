@@ -20,7 +20,7 @@ export const EventList = () => {
       <header className="events__header">
         <h1>Level Up Game Events</h1>
         <button
-          className="btn btn-2 btn-sep icon-create"
+          className="schedule_new_event"
           onClick={() => {
             history.push({ pathname: "/events/new" });
           }}
@@ -34,11 +34,10 @@ export const EventList = () => {
             <div className="registration__game">{event.game.title}</div>
             <div>{event.description}</div>
             <div>
-              debugger
               <p>Current Gamer: {currentGamer.gamer.bio}</p>
-              <p>{new Date(event.date).toString()}</p>
-              <p>{new Date(event.date).toUTCString()}</p>
-              <p>{new Date(event.date).getUTCFullYear()}-{new Date(event.date).getUTCMonth() + 1}-{new Date(event.date).getUTCDate()}</p>
+              {/* <p>{new Date(event.date).toString()}</p> */}
+              {/* <p>{new Date(event.date).toUTCString()}</p> */}
+              {/* <p>{new Date(event.date).getUTCFullYear()}-{new Date(event.date).getUTCMonth() + 1}-{new Date(event.date).getUTCDate()}</p> */}
               <p>{new Date(event.date).toLocaleDateString("en-US", {
                 weekday: "long",
                 year: "numeric",
@@ -49,13 +48,13 @@ export const EventList = () => {
             </div>
             {event.joined ? (
               <button
-                className="btn btn-3"
+                className="leave_event"
                 onClick={() => leaveEvent(event.id)}
               >
                 Leave
               </button>
             ) : (
-              <button className="btn btn-2" onClick={() => joinEvent(event.id)}>
+              <button className="join_event" onClick={() => joinEvent(event.id)}>
                 Join
               </button>
             )}

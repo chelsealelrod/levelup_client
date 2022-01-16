@@ -91,16 +91,16 @@ code {
 
 /* Button 1 */
 .btn-1 {
-	background: #3498db;
+	background: #27ae60;
 	color: #fff;
 }
 
 .btn-1:hover {
-	background: #2980b9;
+	background: #27ae60;
 }
 
 .btn-1:active {
-	background: #2980b9;
+	background: #27ae60;
 	top: 2px;
 }
 

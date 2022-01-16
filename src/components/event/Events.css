@@ -1,4 +1,35 @@
-create_event_button {
+.create_event_button {
     text-align: center;
     background: green;
+}
+
+.registration {
+    border: dotted green;
+    padding: 2em;
+}
+
+.schedule_new_event {
+    padding: 1em;
+    border: solid;
+    background: #27ae60;
+    font-style: oblique;
+    font-size:large;
+    margin-bottom: 1em;
+
+}
+
+.leave_event{
+    padding: 10px;
+    border: solid;
+    background: red;
+    margin-top: 1em;
+    font-size:medium;
+}
+
+.join_event {
+    padding: 10px;
+    border: solid;
+    background: #27ae60;
+    margin-top: 1em;
+    font-size:medium;
 }
